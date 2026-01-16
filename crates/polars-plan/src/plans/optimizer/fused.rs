@@ -148,3 +148,21 @@ impl OptimizationRule for FusedArithmetic {
         }
     }
 }
+
+pub struct FusedSort {}
+
+impl OptimizationRule for FusedSort {
+    fn optimize_plan(
+        &mut self,
+        lp_arena: &mut Arena<IR>,
+        expr_arena: &mut Arena<AExpr>,
+        node: Node,
+    ) -> PolarsResult<Option<IR>> {
+        // Probably want to call `simplify_and_fetch_orderings` to determine orderings of instructions in-between.
+
+        // Testing via assert lf.explain(optimized=True) == expected_plan
+
+        dbg!("xx");
+        todo!()
+    }
+}

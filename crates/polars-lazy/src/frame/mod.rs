@@ -222,6 +222,7 @@ impl LazyFrame {
     ///
     /// Returns `Err` if optimizing the logical plan fails.
     pub fn describe_optimized_plan(&self) -> PolarsResult<String> {
+        dbg!("hi");
         Ok(self.clone().to_alp_optimized()?.describe())
     }
 
